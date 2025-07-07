@@ -40,7 +40,7 @@ public class FileFilterProcess {
             while ((line = reader.readLine()) != null) {
                 Type type = TypeParser.detectType(line);
                 sortedData.addValue(line, type);
-                statisticManager.count(line, type);
+                statisticManager.update(line, type);
             }
         } catch (IOException e) {
             System.out.println("Ошибка! Не удалось прочитать файл " + inputPath);

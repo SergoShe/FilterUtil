@@ -11,7 +11,7 @@ import java.util.List;
 
 public class ParameterBuilder {
 
-    private static List<String> inputFiles;
+    private static List<String> inputFilePaths;
     private static Path outputPath;
     private static String prefix;
     private static boolean appendMode;
@@ -25,7 +25,7 @@ public class ParameterBuilder {
             throw new IllegalArgumentException("Критическая ошибка!\nПараметры отсутствуют");
         }
 
-        inputFiles = new ArrayList<>();
+        inputFilePaths = new ArrayList<>();
         outputPath = Paths.get("").toAbsolutePath().normalize();
         prefix = "";
         appendMode = false;
@@ -33,7 +33,7 @@ public class ParameterBuilder {
 
         parse(args);
 
-        if (inputFiles.isEmpty()) {
+        if (inputFilePaths.isEmpty()) {
             throw new IllegalArgumentException("Критическая ошибка!\nНет входных данных");
         }
         if (statisticType == StatisticType.NOTHING) {
@@ -41,7 +41,7 @@ public class ParameterBuilder {
         }
         isValidOutputPathWay(outputPath.toString());
 
-        return new Parameters(inputFiles, outputPath, prefix, appendMode, statisticType);
+        return new Parameters(inputFilePaths, outputPath, prefix, appendMode, statisticType);
     }
 
     private static void parse(String[] args) {
@@ -80,7 +80,7 @@ public class ParameterBuilder {
                         System.out.println("Ошибка! Неизвестная опция: " + arg + "\n");
                     } else {
                         if (isValidInputPathFiles(arg)) {
-                            inputFiles.add(arg);
+                            inputFilePaths.add(arg);
                         }
                     }
                     break;

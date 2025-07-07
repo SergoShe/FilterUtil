@@ -9,8 +9,8 @@ public class FullLongStatistic extends ShortStatistic {
     private BigInteger sum = BigInteger.ZERO;
 
     @Override
-    public void count(String string) {
-        super.count(string);
+    public void update(String string) {
+        super.update(string);
         long value = Long.parseLong(string);
         max = Math.max(value, max);
         min = Math.min(value, min);

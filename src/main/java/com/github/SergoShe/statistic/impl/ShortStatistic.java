@@ -4,7 +4,7 @@ import com.github.SergoShe.statistic.Statistic;
 
 public class ShortStatistic extends Statistic {
     @Override
-    public void count(String string) {
+    public void update(String string) {
         counter++;
     }
 

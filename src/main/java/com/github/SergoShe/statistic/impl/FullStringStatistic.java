@@ -6,8 +6,8 @@ public class FullStringStatistic extends ShortStatistic {
     private int minLength = Integer.MAX_VALUE;
 
     @Override
-    public void count(String string) {
-        super.count(string);
+    public void update(String string) {
+        super.update(string);
         int length = string.length();
         maxLength = Math.max(length, maxLength);
         minLength = Math.min(length, minLength);

@@ -19,13 +19,13 @@ public class StatisticManager {
     }
 
 
-    public void count(String string, Type type) {
+    public void update(String string, Type type) {
         switch (type) {
-            case INTEGER -> intStatistic.count(string);
-            case FLOAT -> floatStatistic.count(string);
+            case INTEGER -> intStatistic.update(string);
+            case FLOAT -> floatStatistic.update(string);
             default -> {
                 if (!string.isEmpty()) {
-                    stringStatistic.count(string);
+                    stringStatistic.update(string);
                 }
             }
         }

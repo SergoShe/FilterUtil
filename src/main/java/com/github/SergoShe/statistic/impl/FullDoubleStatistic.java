@@ -10,8 +10,8 @@ public class FullDoubleStatistic extends ShortStatistic {
     private BigDecimal sum = BigDecimal.ZERO;
 
     @Override
-    public void count(String string) {
-        super.count(string);
+    public void update(String string) {
+        super.update(string);
         double value = Double.parseDouble(string);
         max = Math.max(value, max);
         min = Math.min(value, min);
