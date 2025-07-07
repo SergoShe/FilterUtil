@@ -35,12 +35,12 @@ target/FilterUtilApp.jar
 Для запуска утилиты выполните следующую команду:
 
 ```
-java -jar .\FilterUtilApp.jar [опции] [входные_файлы]
+java -jar ./FilterUtilApp.jar [опции] [входные_файлы]
 ```
 
  # Пример запуска:
 ```
-java -jar .\FilterUtilApp.jar in1.txt in2.txt -f -o /some/path -p result- -a
+java -jar ./FilterUtilApp.jar in1.txt in2.txt -f -o /some/path -p result- -a
 ```
 # Входные файлы:
 
